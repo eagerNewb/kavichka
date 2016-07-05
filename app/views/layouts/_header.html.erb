@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse navbar-fixed-top no-margin-navbar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          
+            <li>
+              <%= link_to('Излес', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Влез', new_user_session_path)  %>  
+            </li>
+          <% end %>
+            <li><a href="/users/sign_up">Регистрирай се</a></li>
+          <% if user_signed_in? %>
+            <li><a href="#">Профил</a></li>
+          <% end %>
+            <li><a href="#">Помощ</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>

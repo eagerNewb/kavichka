@@ -5,10 +5,80 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+    <script type="text/javascript">
+        function iframe_resize(){
+            var body = document.body,
+            html = document.documentElement,
+            height = Math.max(body.scrollHeight, body.offsetHeight, 
+          html.clientHeight, html.scrollHeight, html.offsetHeight);
+            if (parent.postMessage) {
+                parent.postMessage(height, "http://localhost:3000");
+            }
+        }
+        </script>
+         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+    google.load("feeds", "1");
+
+    function initialize() {
+      
+      var feed = new google.feeds.Feed("http://www.blitz.bg/rss.php?news");
+      feed.setResultFormat(google.feeds.Feed.JSON_FORMAT);
+      // console.log(JSON.parse(feed));
+      feed.load(function(result) {
+        if (!result.error) {
+          // var wrapper = document.getElementById("kavichka-wrap");
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+      
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            var div2 = document.createElement("div");
+            var div3 = document.createElement("div");
+            // $('#feed>div>img').addClass("kavichka-thumb");
+            // div2.className = "";
+            // div3.className = "aClassName";
+
+            // div2.innerHTML =  entry.content;
+
+            var images = [];
+            
+            $(entry.content).each(function(){
+              images = entry.content;
+             images =  $(images).get();
+            });
+           
+            $(container).append(div);
+            $(div).addClass('col-md-3');
+            $('#feed>div>img').addClass('img-responsive');
+            $(div).append(images);
+            div.appendChild(document.createTextNode(entry.title));
+
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+// html
+// div
+//   img
+//   link(title)
+//   content
+//   date
+// div
+
+    </script>
 </head>
-<body>
-
-<%= yield %>
-
+<body onload="iframe_resize();">
+<%= render 'layouts/header'%>
+<%= render 'layouts/modalform'%>
+<div class="container-fluid">
+   <div class="row">
+    		<%= yield %>
+   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<%= render 'layouts/footer' %>
 </body>
 </html>

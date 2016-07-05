@@ -1,0 +1,231 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('glyphicons-halflings-regular.eot');
+  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('glyphicons-halflings-regular.woff') format('woff'),
+  url('glyphicons-halflings-regular.ttf') format('truetype'),
+  url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  height:100%;
+  padding-top: 50px;
+}
+.logo-topbar{
+  margin-bottom:37%;
+}
+.kavichka-sidebar{
+   width:20%;
+   padding-left:3% !important;
+   padding-right:2% !important;
+   margin-right:5%;
+}
+.kavichka-wrap{
+  /*margin-left:20%;*/
+}
+.kavichka-thumb{
+  /*margin-left:20%;*/
+}
+
+a {
+  text-decoration: none !important;
+  color:#000;
+}
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.no-margin-navbar { 
+  margin-bottom: 0px !important;
+}
+    
+/*
+ * Sidebar
+ */
+ .override-modal{
+   background-color: #F5F5F5; 
+    display: inline-block; 
+     padding: 0; 
+     margin-bottom: 0; 
+     font-size: 14px; 
+     font-weight: 400; 
+     line-height: 1.42857143; 
+     text-align: center; 
+     white-space: nowrap; 
+     vertical-align: middle; 
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* background-image: none; */
+    /*border: 1px solid transparent;*/
+    border-radius: 4px;s
+ }
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+.icon-holder{
+  margin:0;
+  padding-left:17%;
+}
+.sidebar-webpage-wrapper .icon-holder .glyphicon-heart{
+padding: 0;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+.un-liked{
+  color:#C4C4C4;
+}
+.nav-main{
+  padding-top:25%;
+}
+.nav-pages{
+  font-style: italic;
+}
+.nav-main>li, .nav-pages>li{
+  border-bottom:1px solid #C4C4C4;
+}
+.nav-main>li{
+  font-size:13px;
+  font-weight: bold;  
+  padding-top:2%;
+  padding-bottom:2%;
+}
+.nav-main>.websites-sidebar{
+  padding-top:3%;
+  padding-bottom: 5%;
+}
+.nav-main>li>a{
+  padding: 0;
+}
+.nav-pages>li{
+
+  padding-bottom: 5%;
+  padding-top:5%;
+}
+/* Sidebar navigation */
+.navbar-inverse{
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #f7f7f7;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  /*padding: 20px;*/
+  /*padding-left:10% !important;*/
+  /*padding-right: 10% !important;*/
+  height:100%;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+
+
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BOOTSTRAP OVERRIDE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.btn-group.open .dropdown-toggle {
+     -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125); 
+     box-shadow: inset 0 3px 5px rgba(0,0,0,.125); 
+}

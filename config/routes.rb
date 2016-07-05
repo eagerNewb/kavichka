@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root  'webpages#index'
+  resources :webpages
+  resources :favs
+  # resources :categories
+  # get '/ha', to: 'categories#index'
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/webpages/:id/:category' => 'webpages#show'
+
+  # get '/favourites/new/:page' => 'favourites#create'
+    # post '/webpages/:favpage/:user' => 'webpages#fav_page'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

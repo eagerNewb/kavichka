@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+['registered', 'banned', 'admin'].each do |role|
+  Role.find_or_create_by({name: role})
+end
+
+['news', 'sports', 'health', 'weather', 'programming', 'fun'].each do |category|
+  Category.find_or_create_by({name: category})
+end
